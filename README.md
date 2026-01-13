@@ -48,7 +48,8 @@ A estrutura de código segue os seguintes requisitos:
 3.  Localizados na pasta `/Infra`, temos o datamodule, com os componentes de conexão, e todas as units auxiliáres para conexão com o banco de dados.
 4.  Localizados na pasta `/Service`, temos a implementação da "regra de negócio", portanto temos a chamada da criação de uma venda, do cadastro de um cliente ou de um carro.
 5.  Temos dois forms, um deles é o form de conexão com o banco de dados, e o outro é o form principal, com os filtros e exibição dos dados;
-6.  Ainda temos a UDFUtils e a UDFConstantes, como UDFs genéricas, com recursos e funcionalidades mais abrangentes.
+6.  Ainda temos a UDFUtils e a UDFConstantes, como UDFs genéricas, com recursos e funcionalidades mais abrangentes;
+7.  Existe, junto dos arquivos, um banco de dados SORTEIO.FDB. Banco sem tabelas criado em Firebird 5.0, com a o usuário SYSDBA e senha masterkey. Existem procedures no programa que criam as tabelas.
 
 ## Funcionamento do programa
 
