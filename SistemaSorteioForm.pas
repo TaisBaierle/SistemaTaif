@@ -347,7 +347,10 @@ begin
   qrClientesSemVendas := TFDQuery.Create(nil);
   try
     qrClientesSemVendas := dmSistemaSorteio.ExecutarSql(Self.FSQLClientesSemVenda, True);
-    lbClientesSemVenda.Caption := qrClientesSemVendas.FieldByName('QTD').AsString + ' clientes cadastrados não efetuaram nenhuma venda.'
+    if qrClientesSemVendas.FieldByName('QTD').AsInteger = 0 then
+       lbClientesSemVenda.Caption := 'Todos os clientes cadastrados efetuaram vendas'
+    else
+      lbClientesSemVenda.Caption := qrClientesSemVendas.FieldByName('QTD').AsString + ' clientes cadastrados não efetuaram nenhuma venda.'
   finally
     qrClientesSemVendas.Free;
   end;
