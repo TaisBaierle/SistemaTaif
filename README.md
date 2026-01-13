@@ -43,6 +43,25 @@ A estrutura de código segue os seguintes requisitos:
 
 ## Como Explorar o Repositório
 
-1.  **SQL Scripts:** Localizados na pasta `/sql`, contêm a criação das tabelas e as consultas de sorteio.
-2.  **Classes de Modelo:** Localizadas em `/Models`, representam as entidades de Clientes, Carros e Vendas.
-3.  **Lógica de Inserção:** Verifique o arquivo principal para ver a execução dos métodos fictícios de banco de dados.
+1.  Localizados na pasta `/DAO`, temos as instruções de CRUD do programada, como SELECTs, INSERTs e DELETE.
+2.  Localizadas na pasta `/Models`, temos as entidades de Clientes, Carros e Vendas.
+3.  Localizados na pasta `/Infra`, temos o datamodule, com os componentes de conexão, e todas as units auxiliáres para conexão com o banco de dados.
+4.  Localizados na pasta `/Service`, temos a implementação da "regra de negócio", portanto temos a chamada da criação de uma venda, do cadastro de um cliente ou de um carro.
+5.  Temos dois forms, um deles é o form de conexão com o banco de dados, e o outro é o form principal, com os filtros e exibição dos dados;
+6.  Ainda temos a UDFUtils e a UDFConstantes, como UDFs genéricas, com recursos e funcionalidades mais abrangentes.
+
+## Funcionamento do programa
+
+1. Para o funcionamento do programa, é muito importante ter um banco de dados firebird 5.0 criado sem nenhuma tabela, somente o banco.
+2. Também é necessário colocar junto a pasta do executável do programa, a dll de conexão com o firebird 5.0, a 'fbclient.dll', essa dll está junto com os fontes neste repositório. Lembrando que é a versão de firebird utilizada é a 5.0.3 x86;
+3. Quando compilado e aberto pela primeira vez, o programa vai solicitar para que o banco de dados seja apontado, então o é necessário apontar o banco de dados vazio, e informar o usuário e senha do firebird atribuídos na instalação.
+4. Após isso, o sistema se fecha e quando foi aberto de novo, vai abrir a tela do programa em si;
+5. Dentro da pasta do executável, vai existir um arquivo chamado 'config.ini', onde guarda o caminho do banco de dado.
+6. Na tela princípal do programa, é onde será possíve fazer os filtros.
+
+<img width="825" height="659" alt="Sem título" src="https://github.com/user-attachments/assets/675384c9-8ac4-4d4a-90a2-851323f3051d" />
+
+<img width="825" height="659" alt="Sem título" src="https://github.com/user-attachments/assets/9707b7cf-a924-44a6-bbec-3b8e0f142f87" />
+
+<img width="825" height="659" alt="Sem título" src="https://github.com/user-attachments/assets/f5c2bc56-ce02-4bc2-a38e-475122d9c729" />
+
